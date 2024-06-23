@@ -1,0 +1,85 @@
+--
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- Hypervisors:
+    - Moxyproy:
+        icon: proxmox.png
+        href: https://192.168.1.100:8006
+        description: Proxmox VE
+        widget:
+          type: proxmox
+          url: https://192.168.1.100:8006
+          username: api@pam!homepage
+          password: 58521398-d4e3-4c00-b3de-d1f48e64378d
+           # node: pve-1 # optional
+    - Avenger:
+        icon: proxmox-light.png
+        href: https://192.168.1.115:8006
+        description: Proxmox VE
+        widget:
+          type: proxmox
+          url: https://192.168.1.115:8006
+          username: api@pam!homepage
+          password: 58521398-d4e3-4c00-b3de-d1f48e64378d
+           # node: pve-1 # optional
+    - Scale_Reborn:
+        icon: truenas.png
+        href: https://192.168.1.102
+        description: TrueNAS
+        widget:
+          type: truenas
+          url: https://192.168.1.102
+          username: user # not required if using api key
+          password: pass # not required if using api key
+          key: 1-uECVXK5FcAqsDYx33w0fEiWKon6cem3pKU2GXZSNjqGdKOdRgR9atZwBl3z8ORoQ # not required if using username / password
+          enablePools: true # optional, defaults to false
+          nasType: scale # defaults to scale, must be set to 'core' if using enablePools with TrueNAS Core  
+
+
+- Services_Self-Hosted:
+    - Nextcloud:
+        icon: nextcloud.png
+        href: https://192.168.1.151:443
+        description: Nextcloud LXC
+        widget:
+          type: nextcloud
+          url: https://192.168.1.151:443
+          username: surya
+           password: TEJAdst@08814
+    - Tailscale:
+        icon: tailscale.png
+        href: https://login.tailscale.com/admin/machines
+        description: Tailscale debian VM
+        widget:
+          type: tailscale
+          deviceid: nYibFwi9N211CNTRL
+          key: tskey-api-kbnicJ3gTx11CNTRL-nG1UkrCyPCbbHtpioCBsCbgosr8oRoKTJ
+    - Nginx:
+        icon: nginx.png
+        href: http://192.168.1.150:81
+        description: nginx LXC
+        widget:
+          type: npm
+          url: http://192.168.1.150:81
+          username: tejadst202@gmail.com
+          password: skpJKDZnWQ8x8X
+
+- Monitors:
+    - Portrainer:
+        icon: portainer.png
+        href: https://192.168.1.107:9443
+        description: Portrainer CT
+        widget:
+          type: portainer
+          url: https://192.168.1.107:9443
+          env: 2
+          key: ptr_V87VGBg/Yw2N/aFJBqXX5YCHK/jpCAnNwgd4xZvU5SI=
+    - Uptime-Kuma:
+        icon: uptime-kuma.png
+        href: http://192.168.1.107:3001
+        description: Netdata
+        widget:
+          type: uptimekuma
+          url: http://192.168.1.107:3001
+          slug: dst
